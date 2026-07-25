@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remote-device-control"
+version = "1.0.0"
+description = "Controller, protocol, and device simulators for a remote IoT device control and monitoring system"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+rdc-server = "controller.server.server:main"
+rdc-bench = "scripts.latency_benchmark:main"
+
+[tool.setuptools]
+packages = ["controller", "controller.cli", "controller.config", "controller.protocol", "controller.server", "simulations", "scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = [
+    "slow: end-to-end tests that open real sockets",
+]

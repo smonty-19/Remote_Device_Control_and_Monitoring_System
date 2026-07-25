@@ -1,0 +1,3 @@
+# The controller, protocol, simulators and benchmark use only the Python
+# standard library. This file covers the test suite alone.
+pytest>=8.0.0
