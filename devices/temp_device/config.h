@@ -1,0 +1,6 @@
+#ifndef TEMP_DEVICE_CONFIG_H
+#define TEMP_DEVICE_CONFIG_H
+
+#define TEMP_SENSOR_PIN 34
+
+#endif
